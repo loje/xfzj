@@ -19,11 +19,12 @@ body{
     -webkit-text-size-adjust: none;
 }
 .container{
+	position: relative;
 	padding: 0px;
 	max-width: 480px;
 }
 .navbar-offcanvas {
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 250px;
     max-width: 100%;
@@ -31,6 +32,7 @@ body{
     top: 0px;
     z-index: 999;
     overflow-y: scroll;
+    opacity: 0;
     -webkit-overflow-scrolling: touch;
     -webkit-transition: all 0.15s ease-in;
     -moz-transition: all 0.15s ease-in;
@@ -38,6 +40,7 @@ body{
     transition: all 0.15s ease-in;
 }
 .navbar-offcanvas.in {
+	opacity: 1;
     box-shadow: 0px 0px 20px black;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
@@ -49,7 +52,7 @@ body{
 }
 
 .navtop{
-	position: fixed;
+	position: absolute;
 	left:0px;
 	top:0px;
 	min-height: inherit;
