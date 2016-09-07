@@ -279,7 +279,7 @@
 					$(".active-list").append($(".clone-activepanel").html());
 					$(".active-list").append($(".clone-activepanel").html());
 					var t = $(window).scrollTop();
-					$('body,html').animate({'scrollTop':t + h},100);
+					$('body,html')delay(250).animate({'scrollTop':t + h},100);
 					console.log(h);
 				})
 			})
