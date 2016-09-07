@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>活动详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="qrcode-panel" style="display:none;">
+				<div class="panel-table">
+					<div class="panel-td">
+						<div class="qrcode">
+							<span class="hide-qrcode"><i class="iconfont">&#xe60c;</i></span>
+							<img src="img/qrcode.png" />
+							<p>长按二维码，即可扫码关注！</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="active-detail">
+				<div class="detail-top">
+					<div class="detail-banner" style="background-image:url(img/active_banner.jpg)"></div>
+					
+					<div class="detail-info">
+						<h4>奥兹国一日行</h4>
+						<p>活动时间 1865年6月1日~1901年9月1日</p>
+						<p>主题 漫游仙境</p>
+						<p>年龄 6~12岁</p>
+						<p>报名费用 2888.00元/5人/组</p>
+					</div>
+					<div class="input-group live-info">
+						<span class="form-control">已报名 7人</span>
+						<span class="input-group-btn">
+							<button class="btn btn-default">进入直播</button>
+						</span>
+					</div>
+				</div>
+				<div class="detail-content">
+					<h5>详情介绍</h5>
+					<article>
+						
+					</article>
+				</div>
+				<div class="detail-bar">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default btn-qrcode">
+								<i class="iconfont">&#xe60e;</i>
+							</button>
+						</span>
+						<a href="" class="form-control">立即报名</a>
+						<span class="input-group-btn">
+							<a href="tel:15899772071" class="btn btn-default btn-phone">
+								<i class="iconfont">&#xe60b;</i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".btn-qrcode").click(function(){
+					$(".qrcode-panel").removeAttr("style");
+				});
+				$(".hide-qrcode").click(function(){
+					$(".qrcode-panel").attr("style","display:none;");
+				})
+			})
+		</script>
+	</body>
+</html>
