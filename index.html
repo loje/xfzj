@@ -79,14 +79,15 @@
 				</div>
 				<div class="tab-second-group" style="display:none;">
 					<ul>
-						<li>不限</li>
-						<li>深圳</li>
+						<li><a>不限</a></li>
+						<li><a>深圳</a></li>
 					</ul>
 				</div>
 			</nav>
+			<div class="navtop-bg"></div>
 
 			<div class="active-list">
-				<div class="thumbnail active-panel">
+				<a class="thumbnail active-panel">
 					<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
 					<div class="caption">
 						<h4>奥兹国一日行</h4>
@@ -102,16 +103,16 @@
 						</div>
 					</div>
 					<div class="row panel-bottom">
-						<div class="col-xs-9">
+						<div class="col-xs-8">
 							<p>报名费用 2888.00元/5人/组</p>
 						</div>
-						<div class="col-xs-3">
-							<a href="#" class="btn btn-warning">马上了解</a>
+						<div class="col-xs-4">
+							<button class="btn btn-warning">马上了解</button>
 						</div>
 					</div>
-				</div>
+				</a>
 
-				<div class="thumbnail active-panel">
+				<a class="thumbnail active-panel">
 					<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
 					<div class="caption">
 						<h4>奥兹国一日行</h4>
@@ -127,16 +128,16 @@
 						</div>
 					</div>
 					<div class="row panel-bottom">
-						<div class="col-xs-9">
+						<div class="col-xs-8">
 							<p>报名费用 2888.00元/5人/组</p>
 						</div>
-						<div class="col-xs-3">
-							<a href="#" class="btn btn-warning">马上了解</a>
+						<div class="col-xs-4">
+							<button class="btn btn-warning">马上了解</button>
 						</div>
 					</div>
-				</div>
+				</a>
 
-				<div class="thumbnail active-panel">
+				<a class="thumbnail active-panel">
 					<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
 					<div class="caption">
 						<h4>奥兹国一日行</h4>
@@ -152,15 +153,69 @@
 						</div>
 					</div>
 					<div class="row panel-bottom">
-						<div class="col-xs-9">
+						<div class="col-xs-8">
 							<p>报名费用 2888.00元/5人/组</p>
 						</div>
-						<div class="col-xs-3">
-							<a href="#" class="btn btn-warning">马上了解</a>
+						<div class="col-xs-4">
+							<button class="btn btn-warning">马上了解</button>
 						</div>
 					</div>
-				</div>
+				</a>
 			</div>
+			<p class="more-active-list">
+				<a>加载更多</a>
+			</p>
+		</div>
+
+		<div class="clone-activepanel" style="display:none;">
+				<a class="thumbnail active-panel">
+					<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
+					<div class="caption">
+						<h4>奥兹国一日行</h4>
+						<p>活动时间 1865年6月1日~1901年9月1日</p>
+						<p>主题 漫游仙境</p>
+						<div class="row">
+							<div class="col-xs-6">
+								已报名 7人
+							</div>
+							<div class="col-xs-6">
+								年龄 6~12岁
+							</div>
+						</div>
+					</div>
+					<div class="row panel-bottom">
+						<div class="col-xs-8">
+							<p>报名费用 2888.00元/5人/组</p>
+						</div>
+						<div class="col-xs-4">
+							<button class="btn btn-warning">马上了解</button>
+						</div>
+					</div>
+				</a>
+				<a class="thumbnail active-panel">
+					<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
+					<div class="caption">
+						<h4>奥兹国一日行</h4>
+						<p>活动时间 1865年6月1日~1901年9月1日</p>
+						<p>主题 漫游仙境</p>
+						<div class="row">
+							<div class="col-xs-6">
+								已报名 7人
+							</div>
+							<div class="col-xs-6">
+								年龄 6~12岁
+							</div>
+						</div>
+					</div>
+					<div class="row panel-bottom">
+						<div class="col-xs-8">
+							<p>报名费用 2888.00元/5人/组</p>
+						</div>
+						<div class="col-xs-4">
+							<button class="btn btn-warning">马上了解</button>
+						</div>
+					</div>
+				</a>
 		</div>
 
 		<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
@@ -175,6 +230,7 @@
 					$(".tab-group .btn-group .btn.show").removeClass("show");
 					$(".tab-group .btn-group .btn").addClass("hid");
 					$(".tab-group").removeAttr("style");
+					$(".navtop-bg").attr("style","display:block;");
 				});
 				$(document).on('click', '.tabtop a.show', function(e){
 					$(this).removeClass("show");
@@ -186,13 +242,46 @@
 				$(document).on('click', '.tab-group .btn-group .btn.hid', function(e){
 					$(this).removeClass("hid");
 					$(this).addClass("show");
+					$(this).parent().siblings().find(".btn").addClass("hid");
+					$(this).parent().siblings().find(".btn").removeClass("show");
 					$(".tab-second-group").removeAttr("style");
+					$(".navtop-bg").attr("style","display:block;");
 				});
 				$(document).on('click', '.tab-group .btn-group .btn.show', function(e){
 					$(this).removeClass("show");
 					$(this).addClass("hid");
 					$(".tab-second-group").attr("style","display:none;");
+					$(".navtop-bg").attr("style","display:block;");
 				});
+
+				$(document).on('click', '.navtop-bg', function(e){
+					$(this).removeAttr("style");
+					$(".tab-group").attr("style","display:none;");
+					$(".tab-second-group").attr("style","display:none;");
+					$(".navtop .tabtop a").addClass("hid");
+					$(".navtop .tabtop a").removeClass("show");
+					$(".tab-group .btn-group .btn").addClass("hid");
+					$(".tab-group .btn-group .btn").removeClass("show");
+				});
+
+				$(document).on('click','.navtop .tab-second-group ul li a',function(e){
+					$(".navtop-bg").removeAttr("style");
+					$(".tab-group").attr("style","display:none;");
+					$(".tab-second-group").attr("style","display:none;");
+					$(".navtop .tabtop a").addClass("hid");
+					$(".navtop .tabtop a").removeClass("show");
+					$(".tab-group .btn-group .btn").addClass("hid");
+					$(".tab-group .btn-group .btn").removeClass("show");
+				});
+
+				$(document).on('click','.more-active-list',function(e){
+					var h = $(window).height()-70;
+					$(".active-list").append($(".clone-activepanel").html());
+					$(".active-list").append($(".clone-activepanel").html());
+					var t = $(window).scrollTop();
+					$('body,html').animate({'scrollTop':t + h},100);
+					console.log(h);
+				})
 			})
 		</script>
 	</body>
