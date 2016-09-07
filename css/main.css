@@ -396,8 +396,8 @@ body{
 	color: #fff;
 }
 .active-detail .detail-bar .input-group .form-control{
-	padding: 9px;
-	height: 40px;
+	padding: 10px 0px;
+	height: inherit;
 	box-shadow: none;
 	border:none;
 	background-color: #fbd249;
