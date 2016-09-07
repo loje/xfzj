@@ -23,8 +23,11 @@ body{
 	padding: 0px;
 	max-width: 480px;
 }
+.navbar-offcanvas .container-fluid{
+	padding: 0px 10px;
+}
 .navbar-offcanvas {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 250px;
     max-width: 100%;
@@ -41,8 +44,11 @@ body{
 }
 .navbar-offcanvas.in {
 	opacity: 1;
-    box-shadow: 0px 0px 20px black;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+	background: linear-gradient(top , rgb(11, 79, 120) , rgb(73, 64, 81) 100%);
+	background: -webkit-linear-gradient(top , rgb(11, 79, 120) , rgb(73, 64, 81) 100%);
+	border-right:1px solid rgba(255,255,255,0.25);
+	box-sizing: border-box;
 }
 .navbar-offcanvas.offcanvas-transform.in {
     -webkit-transform: translate3d(250px, 0px, 0px);
@@ -51,8 +57,65 @@ body{
     transform: translate3d(250px, 0px, 0px);
 }
 
+.offcanvas-bg{
+	display: none;
+	position: fixed;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.75);
+	z-index: 2;
+}
+
+.user-info{
+	padding: 15px 0px;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.user-info .media-left .head-portrait{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-size: cover;
+}
+.user-info .media-body{
+	vertical-align: middle;
+}
+.user-info .media-body h5{
+	margin: 0px;
+	color: #fff;
+}
+.sider-list{
+	padding: 10px 0px 0px 0px;
+	margin:0px;
+}
+.sider-list li{
+	padding: 10px 0px;
+	list-style: none;
+	letter-spacing: 1px;
+	vertical-align: middle;
+}
+.sider-list li a{
+	color: #fff;
+	text-decoration: none;
+}
+.sider-list li a i.iconfont{
+	font-size: 20px;
+}
+.sider-list li a span.bubbles{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	color: #fff;
+	background-color: #f5a623;
+	text-align: center;
+}
+
+
+
 .navtop{
-	position: absolute;
+	position: fixed;
 	left:0px;
 	top:0px;
 	min-height: inherit;
@@ -64,7 +127,6 @@ body{
 	z-index: 1;
 }
 
-
 .navtop .offcanvas-toggle{
 	position: relative;
 	height: 40px;
@@ -72,7 +134,7 @@ body{
 	border:none;
 	background-color: #ff4e00;
 	color: #fff;
-	z-index: 1;
+	z-index: 2;
 }
 .navtop .offcanvas-toggle i.iconfont{
 	font-size: 20px;
@@ -118,6 +180,9 @@ body{
 	padding: 8px 8px 7px;
 	background-color: transparent;
 }
+
+
+
 
 .active-list{
 	padding: 50px 5px 10px 5px;
