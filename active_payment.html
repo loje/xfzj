@@ -23,9 +23,71 @@
 						<p>报名价格 2888.00元/1人/组</p>
 					</div>
 				</div>
+
+				<div class="content-panel">
+					<div class="panel-title">
+						联系信息
+					</div>
+					<div class="panel-body">
+						<p>报名联系人 野原美伢</p>
+						<p>联系人电话 13410061008</p>
+					</div>
+				</div>
+
+				<div class="pay-panel">
+					<div class="panel-title">
+						支付信息
+					</div>
+					<div class="panel-body">
+						<p>订单金额 2888.00元</p>
+						<p>本次活动最多只能用<span class="coupons-num">2</span>张优惠券</p>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">
+								抵用券100元
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">
+								抵用券100元
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">
+								抵用券100元
+							</label>
+						</div>
+						<hr>
+						<div class="pay-mode">支付方式：<i class="iconfont">&#xe60d;</i> 微信支付</p>
+					</div>
+				</div>
+				<div class="payment-bar">
+					<div class="input-group">
+						<div class="form-control">需付：<span>2788.00元</span></div>
+						<span class="input-group-btn">
+							<a href="" class="btn">确认支付</a>
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(document).on("click",".pay-panel .panel-body .checkbox label input[type='checkbox']",function(e){
+					if($(".pay-panel .panel-body .checkbox label input[type='checkbox']:checked").length == $(".coupons-num").text()){
+						$(".pay-panel .panel-body .checkbox label input[type='checkbox']").attr("disabled","disabled");
+						$(".pay-panel .panel-body .checkbox label input[type='checkbox']:checked").removeAttr("disabled");
+						$(".pay-panel .panel-body .checkbox label input[disabled]").parent().addClass("checkbox-disabled");
+					}else{
+						$(".pay-panel .panel-body .checkbox label input[type='checkbox']").removeAttr("disabled");
+						$(".pay-panel .panel-body .checkbox label input[type='checkbox']").parent().removeClass("checkbox-disabled");
+					}
+				});
+			})
+		</script>
 	</body>
 </html>
