@@ -195,6 +195,80 @@
 					<button class="btn btn-block get-new">
 						<i class="iconfont">&#xe612;</i> 获取最新直播信息
 					</button>
+					<div class="dynamic-list">
+						<div class="media">
+							<div class="media-left">
+								<div class="dynamic-user" style="background-image:url(img/coach.jpg)"></div>
+							</div>
+							<div class="media-body">
+								<span class="label label-coach">教练</span>
+								<span class="user-name">湫</span>
+								<article>
+									<p>怎么都不是人类，怎么带？？！</p>
+									<img src="img/active_banner.jpg">
+								</article>
+								<p class="dynamic-time">2016-06-20 11:11</p>
+								<span class="like-btn">
+									<i class="iconfont">&#xe611;</i> 赞
+								</span>
+								<span class="comment-btn">
+									<i class="iconfont">&#xe60a;</i> 评论
+								</span>
+								<div class="comment-box">
+									<div class="comment-top">
+										<i class="iconfont">&#xe611;</i> <span class="like-num">108</span>
+									</div>
+									<div class="comment-content">
+										<p style="display:none;">广志：终于有时间陪小新了！终于有时间陪小新了！终于有时间陪小新了！</p>
+										<p style="display:none;">美伢：小新在哪里？</p>
+										<p style="display:none;">新之助：在这里</p>
+										<p style="display:none;">风间：在这里</p>
+										<p style="display:none;">阿呆：在这里</p>
+										<p style="display:none;">小白：汪</p>
+									</div>
+									<button class="btn btn-block more-comment show-comment">
+										更多评论
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="media">
+							<div class="media-left">
+								<div class="dynamic-user" style="background-image:url(img/coach.jpg)"></div>
+							</div>
+							<div class="media-body">
+								<span class="label label-coach">教练</span>
+								<span class="user-name">湫</span>
+								<article>
+									<video src="http://v.nie.netease.com/nie/2016/0518/935b24a60a96668c110e6b0ddb4bbaafqt.mp4"></video>
+								</article>
+								<p class="dynamic-time">2016-06-20 11:11</p>
+								<span class="like-btn">
+									<i class="iconfont">&#xe611;</i> 赞
+								</span>
+								<span class="comment-btn">
+									<i class="iconfont">&#xe60a;</i> 评论
+								</span>
+								<div class="comment-box">
+									<div class="comment-top">
+										<i class="iconfont">&#xe611;</i> <span class="like-num">108</span>
+									</div>
+									<div class="comment-content">
+										<p style="display:none;">广志：终于有时间陪小新了！终于有时间陪小新了！终于有时间陪小新了！</p>
+										<p style="display:none;">美伢：小新在哪里？</p>
+										<p style="display:none;">新之助：在这里</p>
+										<p style="display:none;">风间：在这里</p>
+										<p style="display:none;">阿呆：在这里</p>
+										<p style="display:none;">小白：汪</p>
+									</div>
+									<button class="btn btn-block more-comment show-comment">
+										更多评论
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -222,7 +296,24 @@
 				$(document).on("click",".livechat-panel .date-list .swiper-wrapper .swiper-slide .btn",function(e){
 					$(".livechat-panel .date-list .swiper-wrapper .swiper-slide .btn").removeClass("btn-active");
 					$(this).addClass("btn-active");
-				}) 
+				});
+
+				$(".livechat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(1)").removeAttr("style");
+				$(".livechat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(2)").removeAttr("style");
+				$(".livechat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(3)").removeAttr("style");
+				$(document).on("click",".livechat-box .dynamic-list .media .media-body .comment-box .hid-comment",function(e){
+					$(this).removeClass("hid-comment");
+					$(this).addClass("show-comment");
+					$(this).parent().find("p").attr("style","display:none;");
+					$(this).parent().find("p:nth-child(1)").removeAttr("style");
+					$(this).parent().find("p:nth-child(2)").removeAttr("style");
+					$(this).parent().find("p:nth-child(3)").removeAttr("style");
+				});
+				$(document).on("click",".livechat-box .dynamic-list .media .media-body .comment-box .show-comment",function(e){
+					$(this).removeClass("show-comment");
+					$(this).addClass("hid-comment");
+					$(this).parent().find("p").removeAttr("style");
+				});
 			})
 		</script>
 	</body>
