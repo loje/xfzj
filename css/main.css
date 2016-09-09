@@ -1023,9 +1023,13 @@ to {-webkit-transform: translate(-50px,0px);}
 	width: 100%;
 	padding: 10px;
 }
-.lcdetail-top .team-member .btn-box .btn{
+.lcdetail-top .team-member .btn-box .btn,
+.lcdetail-top .team-member .btn-box .btn:hover,
+.lcdetail-top .team-member .btn-box .btn:focus{
 	padding: 10px 0px;
 	border:none;
+	color: #fff;
+	outline: none;
 }
 .btn-vote{
 	background-color: #f22647;
@@ -1127,49 +1131,50 @@ to {-webkit-transform: translate(-50px,0px);}
 	font-size: 12px;
 }
 
-.livechat-panel{
+.chat-panel{
+	margin-bottom: 10px;
 	background-color: #fff;
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
 }
-.livechat-panel .title{
+.chat-panel .title{
 	margin:0px;
 	padding: 10px;
 	color: #cccccc;
 	text-align: right;
 }
-.livechat-panel .date-list{
+.chat-panel .date-list{
 	padding: 10px 0px;
 	background-color: #194749;
 	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
 
-.livechat-panel .date-list .list-title{
+.chat-panel .date-list .list-title{
 	padding: 0px 10px;
 }
-.livechat-panel .date-list .list-title h5{
+.chat-panel .date-list .list-title h5{
 	margin:0px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid rgba(255,255,255,0.05);
 	text-align: center;
 	color: #6f8f7f;
 }
-.livechat-panel .date-list .swiper-wrapper{
+.chat-panel .date-list .swiper-wrapper{
 	padding: 10px 0px;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-prev {
+.chat-panel .date-list .swiper-wrapper .swiper-prev {
     padding: 0px 3%;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table {
+.chat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table {
     display: table;
     width: 100%;
     height: 100%;
     text-align: center;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table .swiper-prev-td {
+.chat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table .swiper-prev-td {
     display: table-cell;
     vertical-align: middle;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table .swiper-prev-td i {
+.chat-panel .date-list .swiper-wrapper .swiper-prev .swiper-prev-table .swiper-prev-td i {
     display: block;
     color: #ccc;
     font-weight: 700;
@@ -1178,10 +1183,10 @@ to {-webkit-transform: translate(-50px,0px);}
     -webkit-animation: prev 2.5s linear infinite;
     -o-animation: prev 2.5s linear infinite;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-slide{
+.chat-panel .date-list .swiper-wrapper .swiper-slide{
 	text-align: center;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-slide .btn{
+.chat-panel .date-list .swiper-wrapper .swiper-slide .btn{
 	padding: 5px 10px;
 	background-color: transparent;
 	border:1px solid #2cb697;
@@ -1189,113 +1194,121 @@ to {-webkit-transform: translate(-50px,0px);}
 	font-family: Arial;
 	outline: none;
 }
-.livechat-panel .date-list .swiper-wrapper .swiper-slide .btn-active{
+.chat-panel .date-list .swiper-wrapper .swiper-slide .btn-active{
 	background-color: #6c9;
 	border-color: #6c9;
 	color: #fff;
 }
 
-.livechat-box{
-	padding: 10px;
+.chat-box{
+	padding: 10px 10px 0px 10px;
 }
-.livechat-box .get-new,
-.livechat-box .get-new:focus,
-.livechat-box .get-new:active{
+.chat-box .get-new,
+.chat-box .get-new:focus,
+.chat-box .get-new:active{
 	padding: 9px 0px;
 	border:1px solid #ffeebb;
 	background-color: #fff9e0;
 	color: #eb7350;
 	outline: none;
 }
-.livechat-box .dynamic-list{
-	padding:10px 0px;
+.chat-box .dynamic-list{
+	padding-top:10px;
 }
-.livechat-box .dynamic-list .media{
+.chat-box .dynamic-list .media{
 	margin:0px;
 	padding: 15px 0px;
 	border-bottom: 1px solid #eee;
 }
-.livechat-box .dynamic-list .media:last-child{
+.chat-box .dynamic-list .media:last-child{
 	padding-bottom: 0px;
 	border:none;
 }
-.livechat-box .dynamic-list .media .media-left .dynamic-user{
+.chat-box .dynamic-list .media .media-left .dynamic-user{
 	width: 50px;
 	height: 50px;
 	background-size: cover;
 	background-position: 50%;
 }
 
-.livechat-box .dynamic-list .media .media-body .label-coach{
+.chat-box .dynamic-list .media .media-body .label-coach{
 	display: inline-block;
 	padding:2px 8px;
 	border:1px solid #4a90e2;
 	color:#4a90e2;
 	font-weight: normal;
 }
-.livechat-box .dynamic-list .media .media-body .coach-name{
+.chat-box .dynamic-list .media .media-body .coach-name{
 	display: inline-block;
 }
-.livechat-box .dynamic-list .media .media-body article{
+.chat-box .dynamic-list .media .media-body article{
 	padding: 10px 0px;
 }
-.livechat-box .dynamic-list .media .media-body article img{
+.chat-box .dynamic-list .media .media-body article img{
 	max-width: 100%!important;
 	max-height: 150px;
 }
-.livechat-box .dynamic-list .media .media-body article video{
+.chat-box .dynamic-list .media .media-body article video{
 	position: relative;
 	max-width: 100%!important;
 	height: 150px;
 	background-color: #000;
 	z-index: 0!important;
 }
-.livechat-box .dynamic-list .media .media-body .dynamic-time{
+.chat-box .dynamic-list .media .media-body .dynamic-time{
 	font-family: Arial;
 	color:#9b9b9b;
 }
-.livechat-box .dynamic-list .media .media-body .like-btn,
-.livechat-box .dynamic-list .media .media-body .comment-btn{
+.chat-box .dynamic-list .media .media-body .like-btn,
+.chat-box .dynamic-list .media .media-body .comment-btn{
 	position: relative;
 	display: inline-block;
 	padding-left: 18px;
 	margin-right: 10px;
 }
 
-.livechat-box .dynamic-list .media .media-body .like-btn i.iconfont{
+.chat-box .dynamic-list .media .media-body .like-btn{
+	transition: color 0.5s;
+	-webkit-transition:color 0.5s;
+}
+.chat-box .dynamic-list .media .media-body .liked{
+	color: #8b572a!important;
+}
+
+.chat-box .dynamic-list .media .media-body .like-btn i.iconfont{
 	position: absolute;
 	left: 0px;
 	top:-2px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-btn i.iconfont{
+.chat-box .dynamic-list .media .media-body .comment-btn i.iconfont{
 	position: absolute;
 	left: 0px;
 }
 
-.livechat-box .dynamic-list .media .media-body .comment-box{
+.chat-box .dynamic-list .media .media-body .comment-box{
 	position: relative;
 	margin-top: 5px;
 	padding: 5px 5px 30px 5px;
 	background-color: #eee;
 	border-radius: 4px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-box .comment-top{
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top{
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-box .comment-top i.iconfont{
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top i.iconfont{
 	color: #4a4a4a;
 }
-.livechat-box .dynamic-list .media .media-body .comment-box .comment-top .like-num{
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top .like-num{
 	color: #4a4a4a;
 	font-family: Arial;
 }
-.livechat-box .dynamic-list .media .media-body .comment-box p{
+.chat-box .dynamic-list .media .media-body .comment-box p{
 	font-size: 12px;
 	letter-spacing: 0.5px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-box .more-comment{
+.chat-box .dynamic-list .media .media-body .comment-box .more-comment{
 	position: absolute;
 	left: 0px;
 	bottom: 0px;
@@ -1310,7 +1323,7 @@ to {-webkit-transform: translate(-50px,0px);}
 	outline: none;
 	letter-spacing: 1px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-send{
+.chat-box .dynamic-list .media .media-body .comment-send{
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
@@ -1318,23 +1331,35 @@ to {-webkit-transform: translate(-50px,0px);}
 	height: 100%;
 	z-index: 999999;
 }
-.livechat-box .dynamic-list .media .media-body .comment-send .input-group{
+.chat-box .dynamic-list .media .media-body .comment-send .input-group{
 	position: absolute;
 	left: 0px;
 	bottom: 0px;
 	width: 100%;
 }
-.livechat-box .dynamic-list .media .media-body .comment-send .input-group .form-control{
+.chat-box .dynamic-list .media .media-body .comment-send .input-group .form-control{
 	padding: 10px 12px;
 	height: inherit;
 	border:none;
 	box-shadow: 0px 0px 12px rgba(0,0,0,0.25) inset;
 	border-radius: 0px;
 }
-.livechat-box .dynamic-list .media .media-body .comment-send .input-group .input-group-btn .btn{
+.chat-box .dynamic-list .media .media-body .comment-send .input-group .input-group-btn .btn{
 	padding: 10px 12px;
 	border:none;
 	border-radius: 0px;
 	background-color: #44b549;
 	color: #fff;
+}
+
+.chat-box .more-livechat{
+	margin:0px;
+	padding: 10px 0px;
+	text-align: center;
+}
+.chat-box .more-livechat a{
+	display: inline-block;
+	text-decoration: none;
+	color: #4a4a4a;
+	letter-spacing: 1px;
 }
