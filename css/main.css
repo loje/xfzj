@@ -1247,7 +1247,7 @@ to {-webkit-transform: translate(-50px,0px);}
 	max-width: 100%!important;
 	height: 150px;
 	background-color: #000;
-	z-index: 0;
+	z-index: 0!important;
 }
 .livechat-box .dynamic-list .media .media-body .dynamic-time{
 	font-family: Arial;
