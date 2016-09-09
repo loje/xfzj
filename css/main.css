@@ -1235,10 +1235,13 @@ to {-webkit-transform: translate(-50px,0px);}
 .livechat-box .dynamic-list .media .media-body article{
 	padding: 10px 0px;
 }
-.livechat-box .dynamic-list .media .media-body article img,
-.livechat-box .dynamic-list .media .media-body article video{
+.livechat-box .dynamic-list .media .media-body article img{
 	max-width: 100%!important;
 	max-height: 150px;
+}
+.livechat-box .dynamic-list .media .media-body article video{
+	max-width: 100%!important;
+	height: 150px;
 }
 .livechat-box .dynamic-list .media .media-body .dynamic-time{
 	font-family: Arial;
