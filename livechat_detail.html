@@ -230,6 +230,15 @@
 										更多评论
 									</button>
 								</div>
+								<div class="comment-send" style="display:none;">
+									<div class="hid-send"></div>
+									<div class="input-group">
+										<input type="text" name="" class="form-control" />
+										<span class="input-group-btn">
+											<button class="btn">评论</button>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -241,6 +250,7 @@
 								<span class="label label-coach">教练</span>
 								<span class="user-name">湫</span>
 								<article>
+									<p>网易年度手游</p>
 									<video src="http://v.nie.netease.com/nie/2016/0518/935b24a60a96668c110e6b0ddb4bbaafqt.mp4" controls="controls" x-webkit-airplay="true" webkit-playsinline="true"></video>
 								</article>
 								<p class="dynamic-time">2016-06-20 11:11</p>
@@ -266,6 +276,7 @@
 										更多评论
 									</button>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -308,12 +319,23 @@
 					$(this).parent().find("p:nth-child(1)").removeAttr("style");
 					$(this).parent().find("p:nth-child(2)").removeAttr("style");
 					$(this).parent().find("p:nth-child(3)").removeAttr("style");
+					$(this).text("更多评论");
 				});
 				$(document).on("click",".livechat-box .dynamic-list .media .media-body .comment-box .show-comment",function(e){
 					$(this).removeClass("show-comment");
 					$(this).addClass("hid-comment");
 					$(this).parent().find("p").removeAttr("style");
+					$(this).text("收起评论");
 				});
+
+				// function mScroll(id){$("html,body").stop(true);$("html,body").animate({scrollTop: $("#"+id).offset().top}, 1000);}
+				$(".comment-btn").click(function(){
+					$(this).parent().find(".comment-send").removeAttr("style");
+					$(this).parent().find(".hid-send").height($(window).height()-40);
+				});
+				$(".livechat-box .dynamic-list .media .media-body .hid-send").click(function(){
+					$(".comment-send").attr("style","display:none;");
+				})
 			})
 		</script>
 	</body>
