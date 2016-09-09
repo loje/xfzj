@@ -379,13 +379,11 @@
 					$(this).text("收起评论");
 				});
 
-				// function mScroll(id){$("html,body").stop(true);$("html,body").animate({scrollTop: $("#"+id).offset().top}, 1000);}
 				$(".comment-btn").click(function(){
 					var m = $(this).parent().parent().index() + 1;
 					$(this).parent().find(".comment-send").removeAttr("style");
 					$(this).parent().find(".hid-send").height($(window).height()-40);
-					$.scrollTo('.m' + m,500);
-					//alert($(this).parent().parent().index());
+					$.scrollTo('.m' + m,250);
 				});
 				$(".livechat-box .dynamic-list .media .media-body .hid-send").click(function(){
 					$(".comment-send").attr("style","display:none;");
