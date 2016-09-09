@@ -1243,9 +1243,11 @@ to {-webkit-transform: translate(-50px,0px);}
 	max-height: 150px;
 }
 .livechat-box .dynamic-list .media .media-body article video{
+	position: relative;
 	max-width: 100%!important;
 	height: 150px;
 	background-color: #000;
+	z-index: 0;
 }
 .livechat-box .dynamic-list .media .media-body .dynamic-time{
 	font-family: Arial;
