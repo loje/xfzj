@@ -196,7 +196,7 @@
 						<i class="iconfont">&#xe612;</i> 获取最新直播信息
 					</button>
 					<div class="dynamic-list">
-						<div class="media">
+						<div class="media m1">
 							<div class="media-left">
 								<div class="dynamic-user" style="background-image:url(img/coach.jpg)"></div>
 							</div>
@@ -242,7 +242,7 @@
 							</div>
 						</div>
 
-						<div class="media">
+						<div class="media m2">
 							<div class="media-left">
 								<div class="dynamic-user" style="background-image:url(img/coach.jpg)"></div>
 							</div>
@@ -276,7 +276,15 @@
 										更多评论
 									</button>
 								</div>
-
+								<div class="comment-send" style="display:none;">
+									<div class="hid-send"></div>
+									<div class="input-group">
+										<input type="text" name="" class="form-control" />
+										<span class="input-group-btn">
+											<button class="btn">评论</button>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -286,6 +294,7 @@
 
 		<script src="js/jquery.min.js"></script>
 		<script src="swiper/swiper.jquery.min.js"></script>
+		<script src="scrollTo/jquery.scrollTo.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function () {
 				var memberSwiper = new Swiper ('.swiper-member', {
@@ -330,8 +339,11 @@
 
 				// function mScroll(id){$("html,body").stop(true);$("html,body").animate({scrollTop: $("#"+id).offset().top}, 1000);}
 				$(".comment-btn").click(function(){
+					var m = $(this).parent().parent().index() + 1;
 					$(this).parent().find(".comment-send").removeAttr("style");
 					$(this).parent().find(".hid-send").height($(window).height()-40);
+					$.scrollTo('.m' + m,500);
+					//alert($(this).parent().parent().index());
 				});
 				$(".livechat-box .dynamic-list .media .media-body .hid-send").click(function(){
 					$(".comment-send").attr("style","display:none;");
