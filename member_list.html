@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>会员中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container" style="position:relative;z-index:1;">
+			<nav class="navbar navbar-default navbar-offcanvas" id="nav-offcanvas">
+				<div class="container-fluid">
+					<div class="media user-info">
+						<div class="media-left">
+							<div class="head-portrait" style="background-image:url(img/userportrait.jpg);"></div>
+						</div>
+						<div class="media-body">
+							<h5>蜡笔小新</h5>
+						</div>
+					</div>
+
+					<ul class="sider-list">
+						<li>
+							<a href="">
+								<i class="iconfont">&#xe615;</i> <span>活动报名</span>
+							</a>
+						</li>
+						<li>
+							<a href="livechat_list.html">
+								<i class="iconfont">&#xe614;</i> <span>活动直播</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="iconfont">&#xe603;</i> <span>会员中心</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="iconfont">&#xe604;</i> <span>活动订单</span> <span class="bubbles">2</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="iconfont">&#xe607;</i> <span>优惠券</span> <span class="bubbles">8</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="iconfont">&#xe616;</i> <span>关于我们</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="offcanvas-bg"></div>
+
+			<div class="member-top" style="background-image:url(img/member_bg.jpg);">
+				<div class="top-td">
+					<div class="member-pic" style="background-image:url(img/userportrait.jpg);"></div>
+					<span class="member-name">蜡笔小新</span>
+				</div>
+				<button class="btn btn-default offcanvas-toggle" data-toggle="offcanvas" data-target="#nav-offcanvas">
+					<i class="iconfont">&#xe600;</i>
+				</button>
+			</div>
+			<div class="navtop-bg"></div>
+
+			<div class="member-list">
+				<ul>
+					<li>
+						<a>所有订单 <span class="label">有1个未支付订单</span></a>
+					</li>
+					<li>
+						<a>直播回顾</a>
+					</li>
+					<li>
+						<a>优惠券 <span class="label">有1张优惠券可使用</span></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="member-logo"></div>
+		<script src="js/jquery.min.js"></script>
+		<script src="offcanvas/bootstrap.offcanvas.min.js"></script>
+	</body>
+</html>

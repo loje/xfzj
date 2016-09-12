@@ -33,7 +33,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小丸子</h5>
 										<p>班长</p>
@@ -42,7 +42,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小叉烧</h5>
 										<p>炊事班</p>
@@ -51,7 +51,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小公举</h5>
 										<p>搬运工</p>
@@ -60,7 +60,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小妹妹</h5>
 										<p>副班长</p>
@@ -69,7 +69,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小叮当</h5>
 										<p>吃瓜群众</p>
@@ -78,7 +78,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小仲马</h5>
 										<p>吃瓜群众</p>
@@ -87,7 +87,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="thumbnail">
-									<div class="member-logo" style="background-image:url(img/userportrait.jpg);"></div>
+									<div class="players-logo" style="background-image:url(img/userportrait.jpg);"></div>
 									<div class="caption">
 										<h5>小布什</h5>
 										<p>吃瓜群众</p>
@@ -337,6 +337,35 @@
 			</div>
 		</div>
 
+		<button class="btn btn-govote">
+			<i class="iconfont">&#xe619;</i> 投票
+		</button>
+
+		<a href="index.html" class="btn btn-moreactive">
+			<i class="iconfont">&#xe618;</i> 更多活动
+		</a>
+
+		<button class="btn btn-refresh refresh-opacity">
+			<i class="iconfont">&#xe612;</i>
+		</button>
+
+		<button class="btn btn-top top-opacity">
+			<i class="iconfont">&#xe617;</i>
+		</button>
+
+		<!-- 若用户没有关注，点击投票后弹出 -->
+		<div class="qrcode-panel" style="display:none;">
+			<div class="panel-table">
+				<div class="panel-td">
+					<div class="qrcode">
+						<span class="hide-qrcode"><i class="iconfont">&#xe60c;</i></span>
+						<img src="img/qrcode.png" />
+						<p>长按二维码，扫码关注即可投票！</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="clone" style="display:none;">
 						<div class="media">
 							<div class="media-left">
@@ -471,6 +500,12 @@
 				});
 
 				$(document).on('click','.chat-box .get-new',function(e){
+					$(".get-new i").addClass("refresh-turn");
+					$(".btn-refresh i").addClass("refresh-turn");
+					var refresh = setTimeout(function(){
+						$(".get-new i").removeClass("refresh-turn");
+						$(".btn-refresh i").removeClass("refresh-turn");
+					},500);
 					$(this).parent().find(".dynamic-list").prepend($(".clone").html());
 					$(this).parent().find(".dynamic-list").prepend($(".clone").html());
 
@@ -481,6 +516,67 @@
 
 				$(".btn-livelist").click(function(){
 					$.scrollTo($(".chat-panel"),250);
+				});
+
+				//若用户没有关注，点击投票后弹出(暂时备注，以免影响下面的点击事件)
+				// $(".btn-vote").click(function(){
+				// 	$(".qrcode-panel").removeAttr("style");
+				// });
+				// $(".hide-qrcode").click(function(){
+				// 	$(".qrcode-panel").attr("style","display:none;");
+				// });
+
+				//若用户关注了，点击后反馈投票
+				$(".btn-vote").click(function(){
+					$(this).addClass("btn-voted");
+					$(this).text("已投票，当前票数为101票！");
+				});
+
+				$(".btn-refresh").click(function(){
+					$(".get-new i").addClass("refresh-turn");
+					$(".btn-refresh i").addClass("refresh-turn");
+					var refresh = setTimeout(function(){
+						$(".get-new i").removeClass("refresh-turn");
+						$(".btn-refresh i").removeClass("refresh-turn");
+					},500);
+				});
+
+
+
+				$(".btn-top").click(function(){
+					$.scrollTo($("body"),250);
+				});
+
+				$(window).scroll(function(){
+					if($(window).scrollTop() == 0){
+						$(".btn-top").addClass("top-opacity");
+					}else{
+						$(".btn-top").removeClass("top-opacity");
+					}
+				});
+
+				$(window).scroll(function(){
+					//console.log("scrollTop=" + ($(window).scrollTop() - $(window).height() + 120) + ",offset=" + $(".chat-panel").offset().top);
+					var  a = $(window).scrollTop() - $(window).height();
+					 if(a >= 0){
+						$(".btn-refresh").removeClass("refresh-opacity");
+					 }else{
+					 	$(".btn-refresh").addClass("refresh-opacity");
+					 }
+				})
+
+				$(".btn-govote").click(function(){
+					$.scrollTo($(".team-info"),250);
+				});
+
+				$(window).scroll(function(){
+					var  a = $(window).scrollTop() - $(window).height();
+					console.log($(window).scrollTop());
+					if(a <= 0){
+						$(".btn-govote").addClass("govote-opacity");
+					}else{
+						$(".btn-govote").removeClass("govote-opacity");
+					}
 				});
 			})
 		</script>

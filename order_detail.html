@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>活动订单列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="order-detail">
+				<div class="order-top">
+					<a href="javascript:history.go(-1);" class="back"><i class="iconfont">&#xe609;</i></a>
+					<div class="active-banner" style="background-image:url(img/active_banner.jpg);"></div>
+					<div class="active-info">
+						<h5>广州惠州一日行</h5>
+						<p>主题：亲子</p>
+						<p>活动时间：2016年1月1日</p>
+						<p>年龄：6~12岁</p>
+					</div>
+				</div>
+
+				<div class="apply-info">
+					<h5 class="title">填报信息</h5>
+					<p>报名联系人：野原美伢</p>
+					<p>联系人电话：13410061008</p>
+				</div>
+
+				<div class="pay-info">
+					<h5 class="title">
+						<!-- 未支付的时候 -->
+						<span class="label label-unpay" style="display:none;">未支付</span>
+						<!-- 已支付的时候 -->
+						<span class="label label-paied" style="display:none;">已支付</span>
+						<!-- 已取消订单的时候 -->
+						<span class="label label-cancel">订单已被取消</span>
+						支付信息
+					</h5>
+					<p>订单编号：201602010001</p>
+					<p>下单时间：2016-01-01 12:11:09</p>
+					<p>订单费用：2888.00元</p>
+					<p>优惠券：抵用券100元</p>
+					<p>实际支付：2788.00元</p>
+
+					<!-- 订单未支付时出现 -->
+					<button class="btn btn-block btn-cancel" style="display:none;">我想取消本次订单</button>
+
+					<!-- 订单已支付/被取消时出现 -->
+					<a href="tel:13800138000" class="btn btn-block btn-call">
+						<i class="iconfont">&#xe60b;</i> 对订单有疑问吗？联系我们吧
+					</a>
+				</div>
+
+				<!-- 订单未支付时出现 -->
+				<div class="order-bar" style="display:none;">
+					<div class="input-group">
+						<div class="form-control">
+							合计：<div class="total"><span>2788.00</span>元</div>
+						</div>
+						<span class="input-group-btn">
+							<a class="btn">确认支付</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+	</body>
+</html>
