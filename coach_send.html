@@ -10,7 +10,12 @@
 		<link href="css/coach.css" rel="stylesheet">
 
 		<style type="text/css">
-			.showpic,.showvideo{
+			.showpic{
+				display: block;
+				width: 80px;
+				height: 80px;
+			}
+			.showvideo{
 				width: 80px;
 				height: 80px;
 			}
@@ -35,9 +40,11 @@
 					</div>
 					<div class="col-xs-6">
 						<span class="showpic"></span>
+						<p class="picurl"></p>
 					</div>
 					<div class="col-xs-6">
 						<video class="showvideo" controls="controls" autoplay="autoplay"></video>
+						<p class="videourl"></p>
 					</div>
 				</div>
 			</div>
@@ -48,9 +55,11 @@
 			$(document).ready(function(){
 				$(".getpic").change(function(){
 					$(".showpic").attr("style","background-image:url("+ $(this).val() +")");
+					$(".picurl").text($(this).val());
 				});
 				$(".getvideo").change(function(){
 					$(".showvideo").attr("style","background-image:url("+ $(this).val() +")");
+					$(".videourl").text($(this).val());
 				});
 			})
 		</script>
