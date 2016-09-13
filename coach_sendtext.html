@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>教练直播页面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/coach.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="coachlive-top">
+				<a href="javascript:history.go(-1);" class="back"><i class="iconfont">&#xe609;</i></a>
+				<span class="label label-living">进行中</span> 广州惠州一日行
+			</div>
+
+			<textarea class="form-control coachlive-textbox" placeholder="这一刻的想法...." maxlength="128" rows="10"></textarea>
+		</div>
+		<button class="btn btn-block btn-coachpush">
+			发布直播
+		</button>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".btn-coachpush").click(function(){
+					if($(".coachlive-textbox").val() == ""){
+						alert("请填写内容！");
+						return false;
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

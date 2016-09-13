@@ -8,68 +8,6 @@
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 		<link href="css/coach.css" rel="stylesheet">
-
-		<style type="text/css">
-			.row{
-				margin:0px;
-			}
-			.row .col-xs-6{
-				padding: 5px;
-			}
-			.showpic{
-				position: relative;
-				display: block;
-				width: 150px;
-				height: 150px;
-			}
-			.showpic .getpic{
-				position: absolute;
-				left: 0px;
-				top:0px;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				opacity: 0;
-			}
-			.showpic span{
-				position: absolute;
-				left: 0px;
-				top:0px;
-				width: 100%;
-				height: 100%;
-				background-size: contain;
-				background-position: 50%;
-				background-repeat: no-repeat;
-				z-index: 0;
-				background-color: #ccc;
-			}
-
-			.showvideo{
-				position: relative;
-				display: block;
-				width: 150px;
-				height: 150px;
-			}
-			.showvideo .getvideo{
-				position: absolute;
-				left: 0px;
-				top:0px;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				opacity: 0;
-			}
-			.showvideo video{
-				position: absolute;
-				left: 0px;
-				top:0px;
-				width: 100%;
-				height: 100%;
-				background-size: contain;
-				z-index: 0;
-				background-color: #ccc;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -85,26 +23,36 @@
 					<div class="col-xs-6">
 						<div class="showpic">
 							<input type="file" accept="image/*" capture="camera" class="btn btn-default getpic" value="拍个照" />
+							<div class="repic" style="display:none;">
+								<div class="repic-td">
+									<span>重选照片</span>
+								</div>
+							</div>
 							<span class="veiwpic"></span>
-						</div>
-					</div>
-					<div class="col-xs-6">
-						<div class="showvideo">
-							<input type="file" accept="video/*" capture="camcorder" class="btn btn-default getvideo" value="录个像">
-							<video class="veiwvideo" controls="controls" autoplay="autoplay"></video>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<button class="btn btn-block btn-coachpush">
+			发布直播
+		</button>
 
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-
-				$(".getvideo").on("change", function(){
-					$(".veiwvideo").attr("src",$(this).val());
-				})
+				$(".btn-coachpush").click(function(){
+					if($(".coachlive-textbox").val() == ""){
+						alert("请填写内容！");
+						$(".coachlive-textbox").focus();
+						return false;
+					}else if($(".getpic").val() == ""){
+						alert("请选择图片！");
+						$(".getpic").click();
+						return false;
+					}
+				});
+				
 
 				$(".getpic").on("change", function(){
 					console.log($(this).val());
@@ -114,7 +62,8 @@
 						var reader = new FileReader();
 						reader.readAsDataURL(files[0]);
 						reader.onloadend = function(){
-					   		$(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#eee"});
+					   		$(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#333"});
+					   		$(".repic").removeAttr("style");
 						}
 					}
 				});

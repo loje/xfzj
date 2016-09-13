@@ -162,9 +162,9 @@
 			</div>
 		</div>
 
-		<a href="" class="btn btn-block btn-coachpush">
+		<button class="btn btn-block btn-coachpush">
 			发布直播
-		</a>
+		</button>
 
 		<button class="btn btn-refresh">
 			<i class="iconfont">&#xe612;</i>
@@ -174,7 +174,17 @@
 			<i class="iconfont">&#xe617;</i>
 		</button>
 
-
+		<div class="choose-send" style="display:none;">
+			<div class="send-table">
+				<div class="send-td">
+					<div class="choose-panel">
+						<a href="coach_sendtext.html" class="btn btn-block btn-default">纯文字</a>
+						<a href="coach_sendpic.html" class="btn btn-block btn-default">照片文字</a>
+						<a href="coach_sendvideo.html" class="btn btn-block btn-default">视频文字</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div class="clone" style="display:none;">
 						<div class="media">
@@ -311,6 +321,14 @@
 						$(".btn-top").removeClass("top-opacity");
 					}
 				});
+
+				$(".btn-coachpush").click(function(){
+					$(".choose-send").removeAttr("style");
+				})
+
+				$(".choose-send").click(function(){
+					$(this).attr("style","display:none");
+				})
 			})
 		</script>
 	</body>
