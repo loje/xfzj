@@ -11,13 +11,55 @@
 
 		<style type="text/css">
 			.showpic{
+				position: relative;
 				display: block;
 				width: 80px;
 				height: 80px;
 			}
+			.showpic .getpic{
+				position: absolute;
+				left: 0px;
+				top:0px;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				opacity: 0;
+			}
+			.showpic span{
+				position: absolute;
+				left: 0px;
+				top:0px;
+				width: 100%;
+				height: 100%;
+				background-size: contain;
+				z-index: 0;
+				background-color: #ccc;
+			}
+
 			.showvideo{
+				position: relative;
+				display: block;
 				width: 80px;
 				height: 80px;
+			}
+			.showvideo .getvideo{
+				position: absolute;
+				left: 0px;
+				top:0px;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				opacity: 0;
+			}
+			.showvideo video{
+				position: absolute;
+				left: 0px;
+				top:0px;
+				width: 100%;
+				height: 100%;
+				background-size: contain;
+				z-index: 0;
+				background-color: #ccc;
 			}
 		</style>
 	</head>
@@ -33,18 +75,16 @@
 			<div class="choose-pic">
 				<div class="row">
 					<div class="col-xs-6">
-						<input type="file" accept="image/*" capture="camera" class="btn btn-default getpic" value="拍个照" />
+						<div class="showpic">
+							<input type="file" accept="image/*" capture="camera" class="btn btn-default getpic" value="拍个照" />
+							<span class="veiwpic"></span>
+						</div>
 					</div>
 					<div class="col-xs-6">
-						<input type="file" accept="video/*" capture="camcorder" class="btn btn-default getvideo" value="录个像">
-					</div>
-					<div class="col-xs-6">
-						<span class="showpic"></span>
-						<p class="picurl"></p>
-					</div>
-					<div class="col-xs-6">
-						<video class="showvideo" controls="controls" autoplay="autoplay"></video>
-						<p class="videourl"></p>
+						<div class="showvideo">
+							<input type="file" accept="video/*" capture="camcorder" class="btn btn-default getvideo" value="录个像">
+							<video class="veiwvideo" controls="controls" autoplay="autoplay"></video>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -53,13 +93,67 @@
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$(".getpic").change(function(){
-					$(".showpic").attr("style","background-image:url("+ $(this).val() +")");
-					$(".picurl").text($(this).val());
+				// $(".getpic").change(function(){
+				// 	$(".showpic").attr("style","background-image:url("+ $(this).val() +")");
+				// 	$(".picurl").text($(this).val());
+				// });
+				// $(".getvideo").change(function(){
+				// 	$(".showvideo").attr("style","background-image:url("+ $(this).val() +")");
+				// 	$(".videourl").text($(this).val());
+				// });
+
+				$(".getvideo").on("change", function(){
+					// Get a reference to the fileList
+					var files = !!this.files ? this.files : [];
+
+					// If no files were selected, or no FileReader support, return
+					if (!files.length || !window.FileReader) return;
+
+					// Only proceed if the selected file is an image
+					if (/^image/.test( files[0].type)){
+
+						// Create a new instance of the FileReader
+						var reader = new FileReader();
+
+						// Read the local file as a DataURL
+						reader.readAsDataURL(files[0]);
+
+						// When loaded, set image data as background of div
+						reader.onloadend = function(){
+
+					   $(".veiwvideo").attr("src",this.result);
+						 
+						}
+
+					}
+
 				});
-				$(".getvideo").change(function(){
-					$(".showvideo").attr("style","background-image:url("+ $(this).val() +")");
-					$(".videourl").text($(this).val());
+
+				$(".getpic").on("change", function(){
+					// Get a reference to the fileList
+					var files = !!this.files ? this.files : [];
+
+					// If no files were selected, or no FileReader support, return
+					if (!files.length || !window.FileReader) return;
+
+					// Only proceed if the selected file is an image
+					if (/^image/.test( files[0].type)){
+
+						// Create a new instance of the FileReader
+						var reader = new FileReader();
+
+						// Read the local file as a DataURL
+						reader.readAsDataURL(files[0]);
+
+						// When loaded, set image data as background of div
+						reader.onloadend = function(){
+
+					   $(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#eee"});
+						 
+						}
+
+					}
+
 				});
 			})
 		</script>
