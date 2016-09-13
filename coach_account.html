@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>教练直播登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/coach.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="fullwindow">
+			<div class="login-sort">
+				<div class="sort-table">
+					<div class="sort-td">
+						<div class="logo"></div>
+						<h4>教练直播发布入口</h4>
+						<form>
+							<input type="text" name="" class="form-control coach-account" placeholder="请输入教练帐号" />
+							<input type="password" name="" class="form-control coach-password" placeholder="请输入教练密码" />
+							<a class="btn btn-block btn-account">账户登录</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".btn-account").click(function(){
+					if($(".coach-account").val() == ""){
+						alert("请填写教练帐号");
+						$(".coach-account").focus();
+						return false;
+					}else if($(".coach-password").val() == ""){
+						alert("请填写教练密码");
+						$(".coach-password").focus();
+						return false;
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

@@ -9,8 +9,8 @@
 
 		<link href="css/main.css" rel="stylesheet">
 	</head>
-	<body>
-		<div class="container" style="position:relative;z-index:1;">
+	<body style="background-color:#fff;">
+		<div class="container">
 			<nav class="navbar navbar-default navbar-offcanvas" id="nav-offcanvas">
 				<div class="container-fluid">
 					<div class="media user-info">
@@ -58,29 +58,19 @@
 			</nav>
 			<div class="offcanvas-bg"></div>
 
-			<div class="member-top" style="background-image:url(img/member_bg.jpg);">
-				<div class="top-td">
-					<div class="member-pic" style="background-image:url(img/userportrait.jpg);"></div>
-					<span class="member-name">蜡笔小新</span>
-				</div>
+			<div class="about-top" style="background-image:url(img/member_bg.jpg);">
+				
 				<button class="btn btn-default offcanvas-toggle" data-toggle="offcanvas" data-target="#nav-offcanvas">
 					<i class="iconfont">&#xe600;</i>
 				</button>
 			</div>
 			<div class="navtop-bg"></div>
 
-			<div class="member-list">
-				<ul>
-					<li>
-						<a href="order_list.html">所有订单 <span class="label">有1个未支付订单</span></a>
-					</li>
-					<li>
-						<a href="reviewlive_list.html">直播回顾</a>
-					</li>
-					<li>
-						<a href="coupon_list.html">优惠券 <span class="label">有1张优惠券可使用</span></a>
-					</li>
-				</ul>
+			<div class="about-content">
+				<article>
+					<p>Bootstrap 中文网 为 Bootstrap 专门构建了自己的免费 CDN 加速服务。基于国内云厂商的 CDN 服务，访问速度更快、加速效果更明显、没有速度和带宽限制、永久免费。Bootstrap 中文网还对大量的前端开源工具库提供了 CDN 加速服务，请进入BootCDN 主页查看更多可用的工具库。</p>
+					<p>Bootstrap 提供了两种形式的压缩包，在下载下来的压缩包内可以看到以下目录和文件，这些文件按照类别放到了不同的目录内，并且提供了压缩与未压缩两种版本。</p>
+				</article>
 			</div>
 
 		</div>
@@ -88,5 +78,14 @@
 		<div class="member-logo"></div>
 		<script src="js/jquery.min.js"></script>
 		<script src="offcanvas/bootstrap.offcanvas.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				if($(window).height() < $(document).height()){
+					$(".member-logo").addClass("long-article");
+				}else{
+					$(".member-logo").removeClass("long-article");
+				}
+			})
+		</script>
 	</body>
 </html>

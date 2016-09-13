@@ -109,8 +109,8 @@
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="active-pic" style="background-image:url(img/active_banner.jpg)"></div>
-						<a href="" class="btn btn-block go-activedetail">查看该活动</a>
-						<a href="" class="btn btn-block go-activelist">查看更多活动</a>
+						<a href="active_detail.html" class="btn btn-block go-activedetail">查看该活动</a>
+						<a href="index.html" class="btn btn-block go-activelist">查看更多活动</a>
 					</div>
 					<div class="col-xs-6 ranking-topic">
 						<h5>排行榜</h5>
@@ -360,7 +360,68 @@
 					<div class="qrcode">
 						<span class="hide-qrcode"><i class="iconfont">&#xe60c;</i></span>
 						<img src="img/qrcode.png" />
-						<p>长按二维码，扫码关注即可投票！</p>
+						<p>请关注后，再进行投票</p>
+						<a href="" class="btn btn-block">去关注【幸福之家】</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ranking-list" style="display:none;">
+			<div class="list-table">
+				<div class="list-td">
+					<div class="panel list-panel">
+						<div class="panel-heading">
+							<span class="hide-ranking"><i class="iconfont">&#xe60c;</i></span>
+							<h5>排行榜</h5>
+						</div>
+						<div class="panel-body">
+							<div class="media">
+								<div class="media-left">
+									<span>1</span>
+								</div>
+								<div class="media-body">
+									<p>蜡笔小心队</p>
+									<span class="label">101票</span>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<span>1</span>
+								</div>
+								<div class="media-body">
+									<p>蜡笔小心队</p>
+									<span class="label">101票</span>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<span>1</span>
+								</div>
+								<div class="media-body">
+									<p>蜡笔小心队</p>
+									<span class="label">101票</span>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<span>1</span>
+								</div>
+								<div class="media-body">
+									<p>蜡笔小心队</p>
+									<span class="label">101票</span>
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-left">
+									<span>1</span>
+								</div>
+								<div class="media-body">
+									<p>蜡笔小心队</p>
+									<span class="label">101票</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -526,6 +587,7 @@
 				// 	$(".qrcode-panel").attr("style","display:none;");
 				// });
 
+
 				//若用户关注了，点击后反馈投票
 				$(".btn-vote").click(function(){
 					$(this).addClass("btn-voted");
@@ -533,6 +595,14 @@
 				});
 
 				$(".btn-refresh").click(function(){
+					$.scrollTo($(".chat-panel"),250);
+					$(".dynamic-list").prepend($(".clone").html());
+					$(".dynamic-list").prepend($(".clone").html());
+
+					$(".chat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(1)").removeAttr("style");
+					$(".chat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(2)").removeAttr("style");
+					$(".chat-box .dynamic-list .media .media-body .comment-box .show-comment").parent().find("p:nth-child(3)").removeAttr("style");
+
 					$(".get-new i").addClass("refresh-turn");
 					$(".btn-refresh i").addClass("refresh-turn");
 					var refresh = setTimeout(function(){
@@ -578,6 +648,13 @@
 						$(".btn-govote").removeClass("govote-opacity");
 					}
 				});
+
+				$(".btn-allrank").click(function(){
+					$(".ranking-list").removeAttr("style");
+				})
+				$(".hide-ranking").click(function(){
+					$(".ranking-list").attr("style","display:none;");
+				})
 			})
 		</script>
 	</body>

@@ -1,0 +1,462 @@
+@font-face {font-family: 'iconfont';
+	src: url('../fonts/iconfont.eot'); /* IE9*/
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/iconfont.woff') format('woff'), 
+	url('../fonts/iconfont.ttf') format('truetype'), 
+	url('../fonts/iconfont.svg#iconfont') format('svg'); 
+}
+
+.iconfont{font-family:"iconfont";
+font-size:16px;font-style:normal;}
+
+
+body{
+	font-family: "Segoe UI Light","Microsoft Yahei",Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #333;
+	background: #eee;
+	-webkit-text-size-adjust: none;
+}
+.container{
+	position: relative;
+	padding: 0px;
+	max-width: 480px;
+}
+
+.fullwindow{
+	position: fixed;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/coachlogin_bg.jpg);
+	background-size: cover;
+	background-position: 50%;
+}
+.fullwindow .login-sort{
+	padding: 0px 20px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+.fullwindow .login-sort .sort-table{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.fullwindow .login-sort .sort-table .sort-td{
+	display: table-cell;
+	vertical-align: middle;
+}
+.fullwindow .login-sort .sort-table .sort-td .logo{
+	margin:auto;
+	width: 160px;
+	height: 50px;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-image: url(../img/coachlogo.png);
+}
+.fullwindow .login-sort .sort-table .sort-td h4{
+	margin:0px;
+	padding-top: 15px;
+	text-align: center;
+	color: #fff;
+	letter-spacing: 2px;
+	font-weight: normal;
+}
+.fullwindow .login-sort .sort-table .sort-td .login-btn{
+	margin-top: 40%;
+}
+.fullwindow .login-sort .sort-table .sort-td .login-btn .btn-account{
+	padding: 10px 12px;
+	border:none;
+	background-color: #4a90e2;
+	color: #fff;
+	border-radius: 0px;
+}
+.fullwindow .login-sort .sort-table .sort-td .login-btn hr{
+	border-color: rgba(255,255,255,0.2);
+}
+.fullwindow .login-sort .sort-table .sort-td .login-btn .btn-wechat{
+	padding: 10px 12px;
+	border:none;
+	background-color: #44b549;
+	color: #fff;
+	border-radius: 0px;
+}
+
+
+/*教练登录*/
+.fullwindow .login-sort .sort-table .sort-td form {
+	margin-top: 40%;
+}
+.fullwindow .login-sort .sort-table .sort-td form .form-control{
+	margin-bottom: 10px;
+	padding: 10px 12px;
+	height: inherit;
+	border:none;
+}
+.fullwindow .login-sort .sort-table .sort-td form .btn{
+	margin-top: 30px;
+	padding: 10px 12px;
+	border:none;
+	background-color: #4a90e2;
+	color: #fff;
+	border-radius: 0px;
+}
+
+/*教练直播页面*/
+.coachlive-top{
+	position: relative;
+	padding: 0px 10px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	text-align: right;
+	background-color: #fff;
+	margin-bottom: 10px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
+	border-top:2px solid #4a90e2;
+}
+.coachlive-top a.back {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0px 10px;
+	line-height: 40px;
+	text-decoration: none;
+	color: #4a90e2;
+	text-shadow: 0px 0px 8px rgba(0,0,0,0.75);
+}
+.coachlive-top .label-living {
+	padding: 2px 8px;
+	color: #44b549;
+	border:1px solid #44b549;
+	letter-spacing: 1px;
+	font-weight: normal;
+}
+
+.team-list{
+	margin-bottom: 10px;
+	padding:0px 10px;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+}
+.team-list .media{
+	width: 100%;
+	padding-top:10px;
+	border-bottom: 1px solid #eee;
+	color: #4a4a4a;
+	text-decoration: none;
+}
+.team-list .media .media-left .team-logo{
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: cover;
+}
+.team-list .media .media-body h5{
+	margin:0px;
+	padding-bottom: 10px;
+}
+.team-list .media .media-body p{
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	color:#a66b0a;
+}
+.team-list .media .media-body p .label-votes{
+	border:1px solid #a66b0a;
+	color:#a66b0a;
+	font-weight: normal;
+	padding:2px 8px;
+	margin-right: 10px;
+	letter-spacing: 1px;
+}
+.team-list .media .media-body p .caption{
+	letter-spacing: 1px;
+}
+.team-list .media .media-body ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.team-list .media .media-body ul li{
+	float: left;
+	padding: 0px 8px 8px 0px;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+.chat-panel{
+	margin-bottom: 50px;
+	background-color: #fff;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
+}
+.chat-panel .title{
+	margin:0px;
+	padding: 10px;
+	color: #cccccc;
+	text-align: right;
+	font-size: 12px;
+	border-bottom: 1px solid #eee;
+}
+.chat-box{
+	padding: 10px 10px 0px 10px;
+}
+.chat-box .get-new,
+.chat-box .get-new:focus,
+.chat-box .get-new:active{
+	padding: 9px 0px;
+	border:1px solid #ffeebb;
+	background-color: #fff9e0;
+	color: #eb7350;
+	outline: none;
+}
+.chat-box .get-new i.iconfont{
+	display: inline-block;
+}
+.chat-box .dynamic-list{
+	padding-top:10px;
+}
+.chat-box .dynamic-list .media{
+	margin:0px;
+	padding: 15px 0px;
+	border-bottom: 1px solid #eee;
+}
+.chat-box .dynamic-list .media:last-child{
+	padding-bottom: 0px;
+	border:none;
+}
+.chat-box .dynamic-list .media .media-left .dynamic-user{
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	background-position: 50%;
+}
+
+.chat-box .dynamic-list .media .media-body .label-coach{
+	display: inline-block;
+	padding:2px 8px;
+	border:1px solid #4a90e2;
+	color:#4a90e2;
+	font-weight: normal;
+}
+.chat-box .dynamic-list .media .media-body .coach-name{
+	display: inline-block;
+}
+.chat-box .dynamic-list .media .media-body article{
+	padding: 10px 0px;
+}
+.chat-box .dynamic-list .media .media-body article img{
+	max-width: 100%!important;
+	max-height: 150px;
+}
+.chat-box .dynamic-list .media .media-body article video{
+	position: relative;
+	max-width: 100%!important;
+	height: 150px;
+	background-color: #000;
+	z-index: 0!important;
+}
+.chat-box .dynamic-list .media .media-body .dynamic-time{
+	font-family: Arial;
+	color:#9b9b9b;
+}
+.chat-box .dynamic-list .media .media-body .like-btn,
+.chat-box .dynamic-list .media .media-body .comment-btn{
+	position: relative;
+	display: inline-block;
+	padding-left: 18px;
+	margin-right: 10px;
+}
+
+.chat-box .dynamic-list .media .media-body .like-btn{
+	transition: color 0.5s;
+	-webkit-transition:color 0.5s;
+}
+.chat-box .dynamic-list .media .media-body .liked{
+	color: #8b572a!important;
+}
+
+.chat-box .dynamic-list .media .media-body .like-btn i.iconfont{
+	position: absolute;
+	left: 0px;
+	top:-2px;
+}
+.chat-box .dynamic-list .media .media-body .comment-btn i.iconfont{
+	position: absolute;
+	left: 0px;
+}
+
+.chat-box .dynamic-list .media .media-body .comment-box{
+	position: relative;
+	margin-top: 5px;
+	padding: 5px 5px 30px 5px;
+	background-color: #eee;
+	border-radius: 4px;
+}
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top i.iconfont{
+	color: #4a4a4a;
+}
+.chat-box .dynamic-list .media .media-body .comment-box .comment-top .like-num{
+	color: #4a4a4a;
+	font-family: Arial;
+}
+.chat-box .dynamic-list .media .media-body .comment-box p{
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+.chat-box .dynamic-list .media .media-body .comment-box .more-comment{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	background-color: #9b9b9b;
+	color: #fff;
+	font-size: 12px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border:none;
+	text-align: right;
+	border-top:1px solid #9b9b9b;
+	outline: none;
+	letter-spacing: 1px;
+}
+.chat-box .dynamic-list .media .media-body .comment-send{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+}
+.chat-box .dynamic-list .media .media-body .comment-send .input-group{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+}
+.chat-box .dynamic-list .media .media-body .comment-send .input-group .form-control{
+	padding: 10px 12px;
+	height: inherit;
+	border:none;
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.25) inset;
+	border-radius: 0px;
+}
+.chat-box .dynamic-list .media .media-body .comment-send .input-group .input-group-btn .btn{
+	padding: 10px 12px;
+	border:none;
+	border-radius: 0px;
+	background-color: #44b549;
+	color: #fff;
+}
+
+.chat-box .more-livechat{
+	margin:0px;
+	padding: 10px 0px;
+	text-align: center;
+}
+.chat-box .more-livechat a{
+	display: inline-block;
+	text-decoration: none;
+	color: #4a4a4a;
+	letter-spacing: 1px;
+}
+.btn-refresh,
+.btn-refresh:hover,
+.btn-refresh:focus{
+	position: fixed;
+	right: 10px;
+	bottom: 76px;
+	padding: 3px 7px;
+	background-color: rgba(0,0,0,0.65);
+	color: #fff;
+	z-index: 1;
+	outline: none!important;
+	border-radius: 6px;
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+	transition: bottom 0.5s;
+}
+
+.refresh-opacity{
+	bottom: -60px!important;
+}
+
+.btn-refresh i.iconfont{
+	display: block;
+	font-size: 20px;
+}
+.refresh-turn{
+	animation: refreshturn 0.5s;
+	-webkit-animation: refreshturn 0.5s;
+}
+@keyframes refreshturn
+{
+from {transform: rotate(0deg);}
+to {transform: rotate(360deg);}
+}
+
+
+@-webkit-keyframes refreshturn
+{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+
+
+.btn-top,
+.btn-top:hover,
+.btn-top:focus{
+	position: fixed;
+	right: 10px;
+	bottom: 30px;
+	padding: 3px 7px;
+	background-color: rgba(0,0,0,0.65);
+	color: #fff;
+	z-index: 1;
+	outline: none!important;
+	border-radius: 6px;
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+	transition: bottom 0.5s;
+}
+
+.btn-top i.iconfont{
+	font-size: 20px;
+}
+.top-opacity{
+	bottom: -60px!important;
+}
+
+.btn-coachpush{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	padding: 10px 0px;
+	background-color: #4a90e2;
+	color: #fff;
+	border:none;
+	border-radius: 0px;
+}
+
+/*教练发布页*/
+.coachlive-textbox{
+	border-radius: 0px;
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.2)!important;
+	border:none;
+	outline: none;
+	color: #000;
+}
+
+.choose-video .input-group-btn .btn{
+	appearance: none;
+    -webkit-appearance: none;
+}
