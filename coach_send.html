@@ -20,14 +20,27 @@
 			<textarea class="form-control coachlive-textbox" placeholder="这一刻的想法...." maxlength="128" rows="8"></textarea>
 
 			<div class="choose-pic">
-				<input type="file" accept="image/*" capture="camera" class="btn btn-default" value="拍个照" />
-				<input type="file" accept="video/*" capture="camcorder" class="btn btn-default" value="录个像">
+				<div class="row">
+					<div class="col-xs-6">
+						<input type="file" accept="image/*" capture="camera" class="btn btn-default getpic" value="拍个照" />
+					</div>
+					<div class="col-xs-6">
+						<input type="file" accept="video/*" capture="camcorder" class="btn btn-default getvideo" value="录个像">
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
-
+			$(document).ready(function(){
+				$(".getpic").change(function(){
+					alert($(this).val());
+				});
+				$(".getvideo").change(function(){
+					alert($(this).val());
+				});
+			})
 		</script>
 	</body>
 </html>
