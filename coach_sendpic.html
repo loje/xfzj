@@ -62,7 +62,7 @@
 						var reader = new FileReader();
 						reader.readAsDataURL(files[0]);
 						reader.onloadend = function(){
-					   		$(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#333"});
+					   		$(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#333",backgroundSize: "contain"});
 					   		$(".repic").removeAttr("style");
 						}
 					}
