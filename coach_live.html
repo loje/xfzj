@@ -82,6 +82,15 @@
 										更多评论
 									</button>
 								</div>
+								<div class="comment-send" style="display:none;">
+									<div class="hid-send"></div>
+									<div class="input-group">
+										<input type="text" name="" class="form-control" />
+										<span class="input-group-btn">
+											<button class="btn">评论</button>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -119,6 +128,15 @@
 										更多评论
 									</button>
 								</div>
+								<div class="comment-send" style="display:none;">
+									<div class="hid-send"></div>
+									<div class="input-group">
+										<input type="text" name="" class="form-control" />
+										<span class="input-group-btn">
+											<button class="btn">评论</button>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -151,6 +169,15 @@
 									<button class="btn btn-block more-comment show-comment">
 										更多评论
 									</button>
+								</div>
+								<div class="comment-send" style="display:none;">
+									<div class="hid-send"></div>
+									<div class="input-group">
+										<input type="text" name="" class="form-control" />
+										<span class="input-group-btn">
+											<button class="btn">评论</button>
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -245,6 +272,23 @@
 					$(this).text("收起评论");
 				});
 
+				$(document).on("click",".comment-btn",function(e){
+					$(this).parent().find(".comment-send").removeAttr("style");
+					$(this).parent().find(".hid-send").height($(window).height()-40);
+					$(this).parent().find(".form-control").focus();
+					$.scrollTo($(this).parent().parent(),250);
+				});
+				$(document).on("click",".chat-box .dynamic-list .media .media-body .hid-send",function(e){
+					$(".comment-send").attr("style","display:none;");
+				});
+
+				$(document).on("click",".chat-box .dynamic-list .media .media-body .comment-send .input-group .input-group-btn .btn",function(e){
+					if($(this).parent().prev().val() == ""){
+						alert("你还没有填写任何评论哦！");
+						$(this).parent().prev().focus();
+						return false;
+					}
+				});
 
 				$(document).on("click",".likeit",function(e){
 					$(this).parent().find(".like-num").text(parseInt($(this).parent().find(".like-num").text()) + 1);
