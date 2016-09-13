@@ -7,8 +7,14 @@
 		<!-- Bootstrap -->
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
 		<link href="css/coach.css" rel="stylesheet">
+
+		<style type="text/css">
+			.showpic,.showvideo{
+				width: 80px;
+				height: 80px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -27,6 +33,12 @@
 					<div class="col-xs-6">
 						<input type="file" accept="video/*" capture="camcorder" class="btn btn-default getvideo" value="录个像">
 					</div>
+					<div class="col-xs-6">
+						<span class="showpic"></span>
+					</div>
+					<div class="col-xs-6">
+						<video class="showvideo" controls="controls" autoplay="autoplay"></video>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -35,10 +47,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$(".getpic").change(function(){
-					alert($(this).val());
+					$(".showpic").attr("style","background-image:url("+ $(this).val() +")");
 				});
 				$(".getvideo").change(function(){
-					alert($(this).val());
+					$(".showvideo").attr("style","background-image:url("+ $(this).val() +")");
 				});
 			})
 		</script>
