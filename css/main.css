@@ -1691,6 +1691,7 @@ to {-webkit-transform: rotate(360deg);}
 	height: 40px;
 	line-height: 40px;
 	text-align: right;
+	z-index: 1;
 }
 .reviewlive-top a.back{
 	position: absolute;
