@@ -14,7 +14,7 @@
 				margin:0px;
 			}
 			.row .col-xs-6{
-				padding: 0px 5px;
+				padding: 5px;
 			}
 			.showpic{
 				position: relative;
@@ -101,73 +101,22 @@
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				// $(".getpic").change(function(){
-				// 	$(".showpic").attr("style","background-image:url("+ $(this).val() +")");
-				// 	$(".picurl").text($(this).val());
-				// });
-				// $(".getvideo").change(function(){
-				// 	$(".showvideo").attr("style","background-image:url("+ $(this).val() +")");
-				// 	$(".videourl").text($(this).val());
-				// });
 
 				$(".getvideo").on("change", function(){
 					$(".veiwvideo").attr("src",$(this).val());
 				})
-				
-				// $(".getvideo").on("change", function(){
-				// 	// console.log($(this).val());
-				// 	// Get a reference to the fileList
-				// 	var files = !!this.files ? this.files : [];
-
-				// 	// If no files were selected, or no FileReader support, return
-				// 	if (!files.length || !window.FileReader) return;
-
-				// 	// Only proceed if the selected file is an image
-				// 	if (/^video/.test( files[0].type)){
-
-				// 		// Create a new instance of the FileReader
-				// 		var reader = new FileReader();
-
-				// 		// Read the local file as a DataURL
-				// 		reader.readAsDataURL(files[0]);
-
-				// 		// When loaded, set image data as background of div
-				// 		reader.onloadend = function(){
-
-				// 			$(".veiwvideo").attr("src",this.result);
-				// 			console.log(this.result);
-				// 		}
-
-				// 	}
-
-				// });
 
 				$(".getpic").on("change", function(){
 					console.log($(this).val());
-					// Get a reference to the fileList
 					var files = !!this.files ? this.files : [];
-
-					// If no files were selected, or no FileReader support, return
 					if (!files.length || !window.FileReader) return;
-
-					// Only proceed if the selected file is an image
 					if (/^image/.test( files[0].type)){
-
-						// Create a new instance of the FileReader
 						var reader = new FileReader();
-
-						// Read the local file as a DataURL
 						reader.readAsDataURL(files[0]);
-
-						// When loaded, set image data as background of div
 						reader.onloadend = function(){
-
 					   		$(".veiwpic").css({backgroundImage:"url("+this.result+")",backgroundColor:"#eee"});
-						 	//console.log(this.result);
 						}
-
 					}
-
 				});
 			})
 		</script>
